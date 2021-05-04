@@ -10,8 +10,8 @@ const multer = require('../utils/multer');
 const router = express.Router();
 
 // Routes
-router.post('/register', validator.username, validator.email, validator.password, userCtrl.register);
-router.post('/login' , validator.email, validator.password, userCtrl.login);
+router.post('/register', limitator.CreateAndLoginLimitor, validator.username, validator.email, validator.password, userCtrl.register);
+router.post('/login', limitator.CreateAndLoginLimitor, validator.email, validator.password, userCtrl.login);
 router.post('/profil/modify-password', auth, multer, validator.modifyPassword, userCtrl.modifyPassword);
 router.post('/profil/modify-picture', auth, multer, userCtrl.modifyProfilPicture);
 

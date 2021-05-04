@@ -96,7 +96,7 @@ export default {
             if(err.response.status === 400) {
               this.errors.push(err.response.data.error);
             } else {
-              this.errors.push(err.response.data.error);
+              this.errors.push(err.response.data);
             }
           }) 
         }
