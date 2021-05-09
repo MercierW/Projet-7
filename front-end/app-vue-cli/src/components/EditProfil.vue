@@ -69,7 +69,11 @@ export default {
             this.$refs.inputfile.click()
         },
         selectFile() {
-            this.$refs.label.textContent = this.$refs.inputfile.files[0].name
+            if(this.$refs.inputfile.files[0].name.length - 4 > 10) {
+                this.$refs.label.textContent = this.$refs.inputfile.files[0].name.split('', 10).join('') + "...";
+            } else {
+                this.$refs.label.textContent = this.$refs.inputfile.files[0].name;
+            }
             this.$refs.btn.classList.remove('d-none')
         },
         removeFile() {

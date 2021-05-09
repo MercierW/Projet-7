@@ -115,10 +115,7 @@ export default {
         axios.delete('http://localhost:5000/message/admin/delete-response/' + responseId)
         .then(() => {
             console.log('Réponse supprimé')
-            this.domResponses.forEach(response => {
-              if(response.id === parseInt(responseId))
-                this.responses.splice(this.responses.indexOf(response), 1)
-            });
+            this.domResponses = this.domResponses.filter(response => response.id !== parseInt(responseId))
         })
         .catch(err => {
             console.log(err.response.data)
