@@ -10,9 +10,23 @@ Vous pouvez vous référer au pdf github présent dans le dossier, pour vous aid
 
 4-Allez dans le sous dossier front-end, puis utilisez la commande npm install. Ensuite allez dans le dossier app-vue-cli et refaites un npm install.
 
-5-Lancez le serveur back-end en utilisant la commande npm start.
+5-Créez un fichier .env et placer dedans la clé du token ainsi que les informations de connexion au serveur SQL (host, nom de la base de donnée, mot de passe). La clé et les informations seront déclaré dans des variables qui auront les noms suivant :
 
-6-Lancez l'application front-end en utilisant la commande npm run serve.
+SECRET_TOKEN_KEY = la clé qui sera une suite de chiffre et de lettre.
+
+DB_NAME = nom de votre base de donnée.
+
+DB_HOST_NAME = nom du de l'hébergeur du serveur SQL.
+
+DB_PASSWORD = mot de passe du serveur SQL.
+
+DB_HOST = nom de l'hébergeur, ex: localhost.
+
+DB_DIALECT = le language du serveur utilisé, ici ça sera "mysql"
+
+6-Lancez le serveur back-end en utilisant la commande npm start.
+
+7-Lancez l'application front-end en utilisant la commande npm run serve.
 
 Voilà, vous pouvez maintenant utiliser l'application.
 
