@@ -8,8 +8,7 @@
             </textarea>
             <div class="d-flex mt-3">
             <button @click="triggeredInputFile" type="button" class="btn btn-success">
-                <label v-if="file" class="m-0">{{file.name}}</label>
-                <label v-else class="m-0">Joindre un fichier</label>
+                <label ref="label" class="m-0">Joindre un fichier</label>
                     <input
                     @change="selectFile"
                     type="file"
@@ -55,21 +54,28 @@ export default {
             target.style.height = target.scrollHeight + "px";
         },
         selectFile() {
-            this.file = this.$refs.file.files[0]
+            if(this.$refs.file.files[0].name.length - 4 > 10) {
+                this.$refs.label.textContent = this.$refs.file.files[0].name.split('', 10).join('') + "...";
+                this.file = this.$refs.file.files[0];
+            } else {
+                this.$refs.label.textContent = this.$refs.file.files[0].name;
+                this.file = this.$refs.file.files[0];
+            }
             document.getElementById('div-btns').classList.remove('d-none')
         },
         removeBtns() {
-            document.getElementById('div-btns').classList.add('d-none')
-            document.getElementById('file').value = ""
-            this.file = ""
+            document.getElementById('div-btns').classList.add('d-none');
+            document.getElementById('file').value = "";
+            this.file = "";
+            this.$refs.label.textContent = "Joindre un fichier";
         },
         triggeredInputFile() {
-            document.getElementById('file').click()
+            document.getElementById('file').click();
         },
         sendMessage() {
             let data = new FormData();
-            data.append('message', this.preview)
-            data.append('file', this.file)
+            data.append('message', this.preview);
+            data.append('file', this.file);
 
             axios.post('http://localhost:5000/message/new', data)
             .then(() => {
