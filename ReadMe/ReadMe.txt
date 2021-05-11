@@ -4,7 +4,11 @@ Installation de l'application :
 
 Vous pouvez vous référer au pdf github présent dans le dossier, pour vous aider.
 
-2-Importez la base de donnée, sur votre serveur SQL en utilisant le fichier SQL présent dans le dossier "README". Pour ce se faire, lancez MySQL WorkBench 8.0, puis cliquez sur administration, puis data import. Selectionnez import from self-contained file et selectionnez le fichier SQL. Selectionnez dump structure and data puis cliquez sur start import.
+2-Importez la base de donnée, sur votre serveur SQL en utilisant le fichier SQL présent dans le dossier "README". Pour ce se faire, lancez MySQL WorkBench 8.0, dans un premier temps créez votre schéma de base de donné en cliquant sur "create a new schema in the connected server" donnez lui le nom que vous voulez. 
+
+Cliquez ensuite sur administration, puis "data import", selectionnez  "import from self-contained file" et sélectionnez le fichier SQL dans le chemin. Ensuite dans le champ "dafault target schema" sélectionnez votre schéma.
+
+Pour finir sélectionnez en bas "dump structure and data", cliquez en haut sur l'onglet "import progress", puis "start import", enfin vous dreviez voir les tables apparaîtrent dans votre base de donnée. 
 
 3-Ouvrez un panneau de commande dans le sous-dossier back-end présent dans le dossier Projet-7. Utilisez la commande npm install pour installer tous les modules.
 
@@ -16,11 +20,9 @@ SECRET_TOKEN_KEY = la clé qui sera une suite de chiffre et de lettre.
 
 DB_NAME = nom de votre base de donnée.
 
-DB_HOST_NAME = nom du de l'hébergeur du serveur SQL.
+DB_USERNAME = nom de la personne connecté au serveur SQL.
 
 DB_PASSWORD = mot de passe du serveur SQL.
-
-DB_HOST = nom de l'hébergeur, ex: localhost.
 
 DB_DIALECT = le language du serveur utilisé, ici ça sera "mysql"
 
