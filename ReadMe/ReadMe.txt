@@ -18,11 +18,13 @@ Pour finir sélectionnez en bas "dump structure and data", cliquez en haut sur l
 
 SECRET_TOKEN_KEY = la clé qui sera une suite de chiffre et de lettre.
 
-DB_NAME = nom de votre base de donnée.
+DB_NAME = nom de votre base de donnée
 
-DB_USERNAME = nom de la personne connecté au serveur SQL.
+DB_USERNAME = nom de la personne connecté au serveur SQL
 
-DB_PASSWORD = mot de passe du serveur SQL.
+DB_PASSWORD = mot de passe du serveur SQL
+
+DB_HOST_NAME = nom de l'hébergeur de l'application, ex: "localhost"
 
 DB_DIALECT = le language du serveur utilisé, ici ça sera "mysql"
 
